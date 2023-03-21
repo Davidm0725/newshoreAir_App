@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Result itinerary</h1>
+<div mat-dialog-content>
+  <p><strong>Origin: </strong>{{ data.departureStation }}<br>
+    <strong>Destination: </strong> {{data.arrivalStation}}<br>
+    <strong>Flight Number: </strong>{{data.flightNumber}}<br>
+    <strong>Price: </strong> {{ data.price | currency}}<br>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onConfirm()">Confirm</button>
+</div>

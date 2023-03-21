@@ -1,0 +1,20 @@
+<p-messages class="alertMsgNot"></p-messages>
+<div style="padding-top: 60px;">
+    <div class="containerForm">
+        <div style="margin-top: 50px;">
+            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit(bookingForm)">
+                <div style="padding-top: 20px">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Origin</mat-label>
+                        <input matInput formControlName="origin" style="text-transform:uppercase" maxlength="3">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inputPass">
+                        <mat-label>Destination</mat-label>
+                        <input matInput formControlName="destination" style="text-transform:uppercase" maxlength="3">
+                    </mat-form-field>
+                </div>
+                <button type="submit" mat-raised-button color="primary" style="margin-top: 50px;">Search fligth</button>
+            </form>
+        </div>
+    </div>
+</div>
