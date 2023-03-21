@@ -55,7 +55,8 @@ export class FindFligthComponent {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string, element: any): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '450px',
+      width: '550px',
+      height: '350px',
       enterAnimationDuration,
       exitAnimationDuration,
       data: element
@@ -85,7 +86,7 @@ export class FindFligthComponent {
         } else {
           this.openDialog('0ms', '0ms', findItinerary)
         }
-      }, 2000);
+      }, 1000);
     } else {
       this.svcMessages.add({ severity: 'error', summary: 'Error', detail: 'Same origin and destination', life: 3000 });
     }

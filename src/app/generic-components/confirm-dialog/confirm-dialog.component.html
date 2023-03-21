@@ -1,11 +1,23 @@
 <h1 mat-dialog-title>Result itinerary</h1>
-<div mat-dialog-content>
-  <p><strong>Origin: </strong>{{ data.departureStation }}<br>
-    <strong>Destination: </strong> {{data.arrivalStation}}<br>
-    <strong>Flight Number: </strong>{{data.flightNumber}}<br>
-    <strong>Price: </strong> {{ data.price | currency}}<br>
-  </p>
-</div>
+<mat-grid-list cols="1" rowHeight="210px">
+  <mat-grid-tile>
+    <div mat-dialog-content>
+      <p><strong>Origin: </strong>{{ data.departureStation }}<br>
+        <strong>Destination: </strong> {{data.arrivalStation}}<br>
+        <strong>Flight Number: </strong>{{data.flightNumber}}<br>
+        <strong>Price: </strong>{{symbol}}{{price}}<br>
+      </p>
+    </div>
+    <mat-form-field appearance="fill" class="select">
+      <mat-label>Currencies</mat-label>
+      <mat-select [(value)]="selectedValue" name="currency" (selectionChange)="selectCurr($event.value)">
+        <mat-option *ngFor="let curr of currency" [value]="curr">
+          {{curr.currency}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+</mat-grid-list>
 <div mat-dialog-actions>
   <button mat-button (click)="onConfirm()">Confirm</button>
 </div>

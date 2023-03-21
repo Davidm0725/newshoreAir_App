@@ -8,21 +8,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './generic-components/confirm-dialog/confirm-dialog.component';
-// import { PrimengModule } from 'src/primeng.module';
-
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import {DialogModule} from 'primeng/dialog';
-
-
+import { PrimengModule } from 'src/primeng.module';
+import { MaterialModule } from 'src/material.module';
 
 
 @NgModule({
@@ -38,19 +27,11 @@ import {DialogModule} from 'primeng/dialog';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
     HttpClientModule,
-    MatDialogModule,
-    MessagesModule,
-    MessageModule,
-    DialogModule
+    PrimengModule,
+    MaterialModule,
   ],
   providers: [
-    MessageService,
-    ConfirmationService,
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
